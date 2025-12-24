@@ -1,77 +1,142 @@
-* { margin:0; padding:0; box-sizing:border-box; font-family:'Poppins',sans-serif; }
-body { background:#fff; color:#444; }
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background: #fff;
+    color: #444;
+}
 
 /* LOCK SCREEN */
-#lockScreen{
-    position:fixed; inset:0;
-    background:linear-gradient(180deg,#fff0f5,#ffe4ec);
-    display:flex; flex-direction:column;
-    justify-content:center; align-items:center;
-    z-index:9999; text-align:center;
+#lockScreen {
+    position: fixed;
+    inset: 0;
+    background: linear-gradient(180deg, #fff0f5, #ffe4ec);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    z-index: 9999;
 }
 
-#countdownMessage{
-    font-size:18px;
-    opacity:0.7;
-    margin-bottom:12px;
+#countdownMessage {
+    font-size: 18px;
+    opacity: 0.7;
+    margin-bottom: 10px;
 }
 
-/* HEART PULSE CLOCK */
-#countdown{
-    font-size:46px;
-    font-weight:600;
-    color:#ff3b5c;
-    animation:pulse 1.4s infinite;
+#countdown {
+    font-size: 48px;
+    font-weight: 600;
+    color: #ff3b5c;
 }
 
-/* BIG BOLD AT MIDNIGHT */
-#countdown.big{
-    font-size:64px;
-    letter-spacing:6px;
-    animation:none;
+#itsTime {
+    font-size: 32px;
+    color: #ff3b5c;
+    opacity: 0;
+    margin-top: 20px;
+    transition: opacity 2s ease;
 }
 
-/* SHAKE AT 00:00:05 */
-#countdown.shake{
-    animation:shake 0.4s infinite;
+/* SITE */
+.locked {
+    display: none;
 }
 
-@keyframes pulse{
-    0%{transform:scale(1)}
-    50%{transform:scale(1.08)}
-    100%{transform:scale(1)}
+.hidden {
+    display: none;
 }
 
-@keyframes shake{
-    0%{transform:translateX(0)}
-    25%{transform:translateX(-4px)}
-    50%{transform:translateX(4px)}
-    75%{transform:translateX(-4px)}
-    100%{transform:translateX(0)}
+/* CENTER CARD */
+.center-card {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 40px 20px;
+    text-align: center;
 }
 
-/* IT'S TIME */
-#itsTime{
-    margin-top:20px;
-    font-size:32px;
-    color:#ff3b5c;
-    opacity:0;
-    transition:opacity 2s ease;
+.center-card > div {
+    background: #fff0f5;
+    padding: 35px;
+    border-radius: 22px;
+    max-width: 520px;
+    width: 100%;
+    margin-bottom: 25px;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.08);
 }
 
-.locked{display:none;}
-.hidden{display:none;}
-
-/* FIREWORKS + HEARTS */
-.heart,.firework{
-    position:fixed; bottom:-20px;
-    font-size:26px;
-    animation:floatUp 6s linear forwards;
-    pointer-events:none;
+/* TEXT */
+h2 {
+    color: #ff3b5c;
+    margin-bottom: 10px;
 }
 
-@keyframes floatUp{
-    0%{opacity:0}
-    20%{opacity:1}
-    100%{transform:translateY(-100vh);opacity:0}
+.always {
+    font-size: 30px;
+}
+
+/* INPUT */
+input {
+    width: 80%;
+    padding: 12px;
+    margin-top: 15px;
+    border-radius: 10px;
+    border: 1px solid #ff9aa9;
+    text-align: center;
+}
+
+/* BUTTONS */
+button {
+    margin-top: 20px;
+    padding: 12px 28px;
+    background: #ff3b5c;
+    color: white;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+}
+
+.letter-btn {
+    margin-top: 30px;
+}
+
+/* LETTER */
+.letter {
+    animation: fadeUp 1s ease forwards;
+}
+
+.letter h3 {
+    color: #ff3b5c;
+    margin-bottom: 20px;
+}
+
+.highlight {
+    font-weight: 600;
+    color: #ff3b5c;
+}
+
+.sign {
+    margin-top: 20px;
+    font-weight: 600;
+}
+
+/* ANIMATION */
+@keyframes fadeUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* FOOTER */
+footer {
+    text-align: center;
+    padding: 30px;
+    opacity: 0.6;
 }
