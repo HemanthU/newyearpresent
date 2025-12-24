@@ -8,7 +8,7 @@ const itsTimeText = document.getElementById("itsTime");
 const siteContent = document.getElementById("siteContent");
 const music = document.getElementById("bgMusic");
 
-// COUNTDOWN
+// ⏳ UPDATE COUNTDOWN
 function updateCountdown() {
     const diff = unlockTime - new Date();
 
@@ -22,16 +22,24 @@ function updateCountdown() {
     const s = String(Math.floor(diff / 1000) % 60).padStart(2, "0");
 
     countdownEl.innerText = `${h}:${m}:${s}`;
+
+    // 😨 SHAKE AT 00:00:05
+    if (h === "00" && m === "00" && s === "05") {
+        countdownEl.classList.add("shake");
+    }
 }
 
-// UNLOCK
+// 🔓 UNLOCK SITE
 function unlockSite() {
     clearInterval(timer);
+    countdownEl.classList.remove("shake");
+    countdownEl.classList.add("big");
     countdownEl.style.opacity = "0";
 
     setTimeout(() => {
         itsTimeText.style.opacity = "1";
         music.play();
+        intenseFireworks();
     }, 800);
 
     setTimeout(() => {
@@ -40,7 +48,35 @@ function unlockSite() {
     }, 2500);
 }
 
-// PASSWORD
+// 🎆 FIREWORK BURST
+function intenseFireworks() {
+    for (let i = 0; i < 90; i++) {
+        setTimeout(() => {
+            createFirework();
+            createHeart();
+        }, i * 70);
+    }
+}
+
+function createHeart() {
+    const h = document.createElement("div");
+    h.className = "heart";
+    h.innerText = "❤️";
+    h.style.left = Math.random() * 100 + "vw";
+    document.body.appendChild(h);
+    setTimeout(() => h.remove(), 7000);
+}
+
+function createFirework() {
+    const f = document.createElement("div");
+    f.className = "firework";
+    f.innerText = "🎆";
+    f.style.left = Math.random() * 100 + "vw";
+    document.body.appendChild(f);
+    setTimeout(() => f.remove(), 7000);
+}
+
+// 🔐 PASSWORD CHECK
 function checkPassword() {
     if (document.getElementById("passwordInput").value === "01012025") {
         document.getElementById("passwordBox").style.display = "none";
@@ -48,17 +84,18 @@ function checkPassword() {
     }
 }
 
-// LETTER
+// 💌 SHOW LETTER
 function showLetter() {
     document.getElementById("letterBox").classList.remove("hidden");
 }
 
-// PREVIEW SHORTCUT
+// ⌨️ PREVIEW SHORTCUT (Ctrl + Shift + M)
 document.addEventListener("keydown", e => {
     if (e.ctrlKey && e.shiftKey && e.key.toLowerCase() === "m") {
         unlockSite();
     }
 });
 
+// START TIMER
 const timer = setInterval(updateCountdown, 1000);
 updateCountdown();
