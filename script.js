@@ -8,6 +8,7 @@ const itsTimeText = document.getElementById("itsTime");
 const siteContent = document.getElementById("siteContent");
 const music = document.getElementById("bgMusic");
 
+
 // ⏳ UPDATE COUNTDOWN
 function updateCountdown() {
     const diff = unlockTime - new Date();
