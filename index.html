@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>For Moni ❤️</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<!-- 🔒 LOCK SCREEN -->
+<div id="lockScreen">
+    <div id="countdown">Loading...</div>
+    <div id="itsTime">It’s time ❤️<br>Happy New Year 🎆</div>
+</div>
+
+<!-- 🔓 FULL WEBSITE -->
+<div id="siteContent" class="locked">
+
+    <section class="hero-love">
+        <h1>Hi Moni ❤️</h1>
+        <p>This isn’t just a website.<br>It exists because <span>you exist</span>.</p>
+        <p class="scroll-text">Scroll slowly… this was made with love 💫</p>
+    </section>
+
+    <!-- PASSWORD -->
+    <section class="password-section">
+        <h2>Oh hi Moni ❤️</h2>
+        <p>This part is only for you.</p>
+        <input type="password" id="passwordInput" placeholder="Enter the date">
+        <button class="password-btn" onclick="checkPassword()">Unlock ❤️</button>
+        <p class="hint">(A date from this year 🌙)</p>
+    </section>
+
+    <!-- MINE -->
+    <section class="mine-section hidden" id="mineSection">
+        <button class="mine-btn" onclick="revealMine()">Click if you’re mine 💘</button>
+
+        <p id="mineMsg" class="hidden-msg big-love"></p>
+
+        <!-- LETTER -->
+        <div id="newYearLetter" class="letter hidden-msg">
+            <h3>My New Year Letter to You ❤️</h3>
+
+            <p>
+                As this new year begins, there’s only one thing I’m sure of —
+                I want my days to start with thoughts of you and end with the same calm.
+            </p>
+
+            <p>
+                You didn’t rush into my life.
+                You slowly became the part that feels right,
+                even on the days that aren’t easy.
+            </p>
+
+            <p>
+                I don’t know what this year will bring,
+                but if you’re somewhere in it — even quietly —
+                I know it will be beautiful.
+            </p>
+
+            <p class="highlight">
+                Happy New Year, Moni.  
+                I choose you — today, and every day that follows.
+            </p>
+
+            <p class="sign">— Hemu ❤️</p>
+        </div>
+    </section>
+
+    <footer>Made with ❤️ by Hemu</footer>
+</div>
+
+<!-- MUSIC -->
+<audio id="bgMusic" loop>
+    <source src="music.mp3" type="audio/mp3">
+</audio>
+
+<script src="script.js"></script>
+</body>
+</html>
