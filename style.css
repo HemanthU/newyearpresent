@@ -10,7 +10,7 @@ body {
     color: #444;
 }
 
-/* LOCK SCREEN */
+/* 🔒 LOCK SCREEN */
 #lockScreen {
     position: fixed;
     inset: 0;
@@ -29,12 +29,41 @@ body {
     margin-bottom: 10px;
 }
 
+/* ❤️ HEART PULSE CLOCK */
 #countdown {
     font-size: 48px;
     font-weight: 600;
     color: #ff3b5c;
+    animation: pulse 1.4s infinite;
 }
 
+/* ⏰ BIG CLOCK AT MIDNIGHT */
+#countdown.big {
+    font-size: 64px;
+    letter-spacing: 6px;
+    animation: none;
+}
+
+/* 😨 SHAKE AT 00:00:05 */
+#countdown.shake {
+    animation: shake 0.4s infinite;
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.08); }
+    100% { transform: scale(1); }
+}
+
+@keyframes shake {
+    0% { transform: translateX(0); }
+    25% { transform: translateX(-4px); }
+    50% { transform: translateX(4px); }
+    75% { transform: translateX(-4px); }
+    100% { transform: translateX(0); }
+}
+
+/* ✨ IT'S TIME */
 #itsTime {
     font-size: 32px;
     color: #ff3b5c;
@@ -43,16 +72,11 @@ body {
     transition: opacity 2s ease;
 }
 
-/* SITE */
-.locked {
-    display: none;
-}
+/* SITE VISIBILITY */
+.locked { display: none; }
+.hidden { display: none; }
 
-.hidden {
-    display: none;
-}
-
-/* CENTER CARD */
+/* 📦 CENTER CARD */
 .center-card {
     min-height: 100vh;
     display: flex;
@@ -76,7 +100,6 @@ body {
 /* TEXT */
 h2 {
     color: #ff3b5c;
-    margin-bottom: 10px;
 }
 
 .always {
@@ -104,18 +127,9 @@ button {
     cursor: pointer;
 }
 
-.letter-btn {
-    margin-top: 30px;
-}
-
-/* LETTER */
+/* 💌 LETTER */
 .letter {
     animation: fadeUp 1s ease forwards;
-}
-
-.letter h3 {
-    color: #ff3b5c;
-    margin-bottom: 20px;
 }
 
 .highlight {
@@ -128,10 +142,25 @@ button {
     font-weight: 600;
 }
 
-/* ANIMATION */
+/* LETTER ANIMATION */
 @keyframes fadeUp {
     from { opacity: 0; transform: translateY(20px); }
     to { opacity: 1; transform: translateY(0); }
+}
+
+/* 🎆 FIREWORKS + ❤️ HEARTS */
+.heart, .firework {
+    position: fixed;
+    bottom: -20px;
+    font-size: 26px;
+    animation: floatUp 6s linear forwards;
+    pointer-events: none;
+}
+
+@keyframes floatUp {
+    0% { opacity: 0; }
+    20% { opacity: 1; }
+    100% { transform: translateY(-100vh); opacity: 0; }
 }
 
 /* FOOTER */
