@@ -169,3 +169,77 @@ footer {
     padding: 30px;
     opacity: 0.6;
 }
+
+
+/* 📱 MOBILE OPTIMIZATION */
+@media (max-width: 600px) {
+
+    /* Countdown */
+    #countdown {
+        font-size: 38px;
+    }
+
+    #countdown.big {
+        font-size: 52px;
+        letter-spacing: 4px;
+    }
+
+    #itsTime {
+        font-size: 26px;
+    }
+
+    #countdownMessage {
+        font-size: 15px;
+        padding: 0 15px;
+    }
+
+    /* Center card spacing */
+    .center-card {
+        padding: 20px 15px;
+    }
+
+    .center-card > div {
+        padding: 25px 20px;
+        margin-bottom: 20px;
+    }
+
+    /* Text sizing */
+    h2 {
+        font-size: 22px;
+    }
+
+    .always {
+        font-size: 24px;
+    }
+
+    p {
+        font-size: 15px;
+        line-height: 1.7;
+    }
+
+    /* Input & buttons */
+    input {
+        width: 100%;
+        font-size: 16px;
+    }
+
+    button {
+        width: 100%;
+        padding: 14px;
+        font-size: 16px;
+    }
+
+    /* Letter */
+    .letter h3 {
+        font-size: 20px;
+    }
+
+    .sign {
+        font-size: 15px;
+    }
+
+    /* Fireworks & hearts (lighter on mobile) */
+    .heart, .firework {
+        font-size: 22px;
+    }
+}
