@@ -9,59 +9,61 @@
 </head>
 <body>
 
-<!-- LOCK SCREEN -->
+<!-- 🔒 LOCK SCREEN -->
 <div id="lockScreen">
     <div id="countdownMessage">come back at new year baby ❤️</div>
     <div id="countdown">Loading...</div>
     <div id="itsTime">It’s time ❤️</div>
 </div>
 
-<!-- FULL WEBSITE -->
+<!-- 🔓 SITE CONTENT -->
 <div id="siteContent" class="locked">
 
-    <section class="hero-love">
-        <h1>Hi Moni ❤️</h1>
-        <p>This isn’t just a website.<br>It exists because <span>you exist</span>.</p>
-        <p class="scroll-text">Scroll slowly… this was made with love 💫</p>
-    </section>
+    <section class="center-card">
 
-    <!-- PASSWORD -->
-    <section class="password-section">
-        <h2>Oh hi Moni ❤️</h2>
-        <p>This part is only for you.</p>
-        <input type="password" id="passwordInput" placeholder="Enter the date">
-        <button class="password-btn" onclick="checkPassword()">Unlock ❤️</button>
-        <p class="hint">(A date from this year 🌙)</p>
-    </section>
+        <!-- PASSWORD -->
+        <div id="passwordBox">
+            <h2>Oh hi Moni ❤️</h2>
+            <p>This part is only for you.</p>
+            <input type="password" id="passwordInput" placeholder="Enter the date">
+            <button onclick="checkPassword()">Unlock ❤️</button>
+        </div>
 
-    <!-- MINE -->
-    <section class="mine-section hidden" id="mineSection">
-        <button class="mine-btn" onclick="revealMine()">Click if you’re mine 💘</button>
+        <!-- AFTER PASSWORD -->
+        <div id="afterPassword" class="hidden">
+            <h2 class="always">I am always yours ❤️</h2>
+            <button class="letter-btn" onclick="showLetter()">Wanna read a letter?</button>
+        </div>
 
-        <p id="mineMsg" class="hidden-msg big-love"></p>
-
-        <div id="newYearLetter" class="letter hidden-msg">
+        <!-- LETTER -->
+        <div id="letterBox" class="hidden letter">
             <h3>My New Year Letter to You ❤️</h3>
+
             <p>
-                As this new year begins, there’s only one thing I’m sure of —
-                I want my days to start with thoughts of you and end with the same calm.
+                This year didn’t begin with fireworks for me.
+                It began with thoughts of you.
             </p>
+
             <p>
-                You didn’t rush into my life.
-                You slowly became the part that feels right,
-                even on the days that aren’t easy.
+                Somewhere between normal days,
+                you became the place where my heart rests.
             </p>
+
             <p class="highlight">
-                Happy New Year, Moni.  
-                I choose you — today, and every day that follows.
+                No matter what changes,
+                one thing won’t —
+                I’m here. Always.
             </p>
+
             <p class="sign">— Hemu ❤️</p>
         </div>
+
     </section>
 
     <footer>Made with ❤️ by Hemu</footer>
 </div>
 
+<!-- MUSIC -->
 <audio id="bgMusic" loop>
     <source src="music.mp3" type="audio/mp3">
 </audio>
