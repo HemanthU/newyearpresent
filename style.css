@@ -1,161 +1,77 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Poppins', sans-serif;
-}
-
-body { background: #fff; color: #444; }
+* { margin:0; padding:0; box-sizing:border-box; font-family:'Poppins',sans-serif; }
+body { background:#fff; color:#444; }
 
 /* LOCK SCREEN */
-#lockScreen {
-    position: fixed;
-    inset: 0;
-    background: linear-gradient(180deg, #fff0f5, #ffe4ec);
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    z-index: 9999;
-    text-align: center;
+#lockScreen{
+    position:fixed; inset:0;
+    background:linear-gradient(180deg,#fff0f5,#ffe4ec);
+    display:flex; flex-direction:column;
+    justify-content:center; align-items:center;
+    z-index:9999; text-align:center;
 }
 
-#countdown {
-    font-size: 46px;
-    font-weight: 600;
-    color: #ff3b5c;
+#countdownMessage{
+    font-size:18px;
+    opacity:0.7;
+    margin-bottom:12px;
 }
 
-#itsTime {
-    margin-top: 25px;
-    font-size: 26px;
-    color: #ff3b5c;
-    opacity: 0;
-    transition: opacity 2s ease;
+/* HEART PULSE CLOCK */
+#countdown{
+    font-size:46px;
+    font-weight:600;
+    color:#ff3b5c;
+    animation:pulse 1.4s infinite;
 }
 
-.locked { display: none; }
-.hidden { display: none; }
-
-/* HERO */
-.hero-love {
-    height: 100vh;
-    background: linear-gradient(180deg, #fff0f5, #ffe4ec);
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    padding: 30px;
+/* BIG BOLD AT MIDNIGHT */
+#countdown.big{
+    font-size:64px;
+    letter-spacing:6px;
+    animation:none;
 }
 
-.hero-love h1 {
-    font-size: 42px;
-    color: #ff3b5c;
+/* SHAKE AT 00:00:05 */
+#countdown.shake{
+    animation:shake 0.4s infinite;
 }
 
-.scroll-text {
-    opacity: 0.7;
-    margin-top: 15px;
+@keyframes pulse{
+    0%{transform:scale(1)}
+    50%{transform:scale(1.08)}
+    100%{transform:scale(1)}
 }
 
-/* SECTIONS */
-section {
-    padding: 90px 30px;
-    text-align: center;
+@keyframes shake{
+    0%{transform:translateX(0)}
+    25%{transform:translateX(-4px)}
+    50%{transform:translateX(4px)}
+    75%{transform:translateX(-4px)}
+    100%{transform:translateX(0)}
 }
 
-h2 {
-    color: #ff3b5c;
-    margin-bottom: 20px;
+/* IT'S TIME */
+#itsTime{
+    margin-top:20px;
+    font-size:32px;
+    color:#ff3b5c;
+    opacity:0;
+    transition:opacity 2s ease;
 }
 
-p {
-    max-width: 600px;
-    margin: 12px auto;
-    line-height: 1.8;
-}
-
-.highlight {
-    color: #ff3b5c;
-    font-weight: 600;
-}
-
-/* PASSWORD */
-.password-section input {
-    padding: 12px;
-    width: 240px;
-    border-radius: 10px;
-    border: 1px solid #ff9aa9;
-    text-align: center;
-}
-
-.password-btn {
-    margin-top: 15px;
-    padding: 12px 26px;
-    background: #ff3b5c;
-    color: white;
-    border: none;
-    border-radius: 25px;
-    cursor: pointer;
-}
-
-.hint {
-    font-size: 14px;
-    opacity: 0.6;
-}
-
-/* BUTTON */
-.mine-btn {
-    background: #ff3b5c;
-    color: white;
-    padding: 14px 26px;
-    border-radius: 30px;
-    border: none;
-    cursor: pointer;
-}
-
-/* LETTER */
-.hidden-msg {
-    opacity: 0;
-    max-height: 0;
-    overflow: hidden;
-    transition: all 0.8s ease;
-}
-
-.hidden-msg.show {
-    opacity: 1;
-    max-height: 1200px;
-}
-
-.letter {
-    margin-top: 40px;
-    background: #fff0f5;
-    padding: 30px;
-    border-radius: 18px;
-}
-
-.sign {
-    margin-top: 20px;
-    font-weight: 600;
-}
+.locked{display:none;}
+.hidden{display:none;}
 
 /* FIREWORKS + HEARTS */
-.heart, .firework {
-    position: fixed;
-    bottom: -20px;
-    font-size: 26px;
-    animation: floatUp 6s linear forwards;
-    pointer-events: none;
+.heart,.firework{
+    position:fixed; bottom:-20px;
+    font-size:26px;
+    animation:floatUp 6s linear forwards;
+    pointer-events:none;
 }
 
-@keyframes floatUp {
-    0% { opacity: 0; }
-    20% { opacity: 1; }
-    100% { transform: translateY(-100vh); opacity: 0; }
-}
-
-footer {
-    padding: 30px;
-    opacity: 0.6;
+@keyframes floatUp{
+    0%{opacity:0}
+    20%{opacity:1}
+    100%{transform:translateY(-100vh);opacity:0}
 }
