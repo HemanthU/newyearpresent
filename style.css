@@ -169,6 +169,23 @@ button {
 .letter p {
     margin-bottom: 26px;
 }
+/* 💌 FORCE LETTER TO BE FULL-WIDTH (DO NOT AFFECT OTHER CARDS) */
+.center-card > div.letter {
+    max-width: 100% !important;
+    width: 100% !important;
+    padding-left: 16px;
+    padding-right: 16px;
+    box-shadow: none;
+    border-radius: 0;
+}
+@media (max-width: 600px) {
+    .center-card > div.letter {
+        padding-left: 14px;
+        padding-right: 14px;
+        font-size: 19px;
+        line-height: 2;
+    }
+}
 
 
 /* LETTER ANIMATION */
