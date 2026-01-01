@@ -5,7 +5,7 @@ const music = document.getElementById("bgMusic");
 function checkPassword() {
     const input = document.getElementById("passwordInput").value.trim();
 
-    if (input === "01012025") {
+    if (input === "112025") {
         // Hide password card
         document.getElementById("passwordBox").style.display = "none";
 
