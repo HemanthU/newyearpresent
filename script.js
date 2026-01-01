@@ -78,10 +78,15 @@ function createFirework() {
 }
 
 // 🔐 PASSWORD CHECK
+
+
 function checkPassword() {
     if (document.getElementById("passwordInput").value === "01012025") {
         document.getElementById("passwordBox").style.display = "none";
         document.getElementById("afterPassword").classList.remove("hidden");
+
+        // 🎵 START MUSIC HERE
+        music.play().catch(() => {});
     }
 }
 
@@ -89,7 +94,10 @@ function checkPassword() {
 function showLetter() {
     document.getElementById("letterBox").classList.remove("hidden");
 }
-
+function showLetter() {
+    document.getElementById("letterBox").classList.remove("hidden");
+    music.play().catch(() => {});
+}
 // ⌨️ PREVIEW SHORTCUT (Ctrl + Shift + M)
 document.addEventListener("keydown", e => {
     if (e.ctrlKey && e.shiftKey && e.key.toLowerCase() === "m") {
